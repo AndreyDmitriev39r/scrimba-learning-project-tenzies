@@ -13,6 +13,7 @@
   --die-bg: #FFF;
   --die-shadow: rgba(0, 0, 0, 0.15);
   --die-text: #2B283A;
+  --reroll-bg: #5035FF;
 }
 
 body {
@@ -34,6 +35,7 @@ main {
   width: 320px;
   border-radius: 10px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 34px;
@@ -45,15 +47,27 @@ main {
   gap: 18px;
 }
 
-.die {
-  width: 35px;
-  height: 35px;
+.die, .reroll {
+  cursor: pointer;
   border-radius: 3.81px;
   border: none;
+  font-weight: 700;
+}
+
+.die {
+  width: 35px;
+  height: 35px;  
   box-shadow: 0px 2px 2px var(--die-shadow);
   color: var(--die-text);
   background-color: var(--die-bg);
-  font-size: 20px;
-  font-weight: 700;
-  cursor: pointer;
+  font-size: 20px; 
+}
+
+.reroll {
+  margin-top: 25px;
+  height: 36px;
+  width: 92px;
+  color: var(--die-bg);
+  background-color: var(--reroll-bg);
+  font-size: 16.5px;  
 }
