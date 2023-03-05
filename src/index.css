@@ -10,6 +10,9 @@
   --body-bg: pink;
   --root-bg: #0B2434;
   --main-bg: #F5F5F5;
+  --die-bg: #FFF;
+  --die-shadow: rgba(0, 0, 0, 0.15);
+  --die-text: #2B283A;
 }
 
 body {
@@ -21,7 +24,7 @@ body {
 
 #root {
   background-color: var(--root-bg);
-  margin-top: 1.5rem;
+  height: 100vh;
   padding: 30px 20px;
 }
 
@@ -30,4 +33,26 @@ main {
   height: 320px;
   width: 320px;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 34px;
+}
+
+.die-container {  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 18px;
+}
+
+.die {
+  width: 35px;
+  height: 35px;
+  border-radius: 3.81px;
+  border: none;
+  box-shadow: 0 2px 2px var(--button-shadow);
+  color: var(--die-text);
+  background-color: var(--die-bg);
+  font-size: 20px;
+  font-style: bold;
 }
