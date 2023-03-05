@@ -13,7 +13,12 @@ function App() {
   const getDicevalues = (diceNumber, range) => {
     return Array(diceNumber)
       .fill(null)
-      .map(item => getRandomNumber(range));
+      .map((item) => {
+        return {
+          value: getRandomNumber(range),
+          isHeld: false,
+        };
+      });
   }
 
   // event handlers
@@ -28,7 +33,13 @@ function App() {
 
   // rendering
   
-  let diceElements = dice.map((value, index) => <Die value={value} key={index} />);
+  let diceElements = dice.map((dice, index) =>
+  <Die
+    value={dice.value}
+    isHeld={dice.isHeld}
+    key={index}
+  />
+  );
   
   return (
    <main>

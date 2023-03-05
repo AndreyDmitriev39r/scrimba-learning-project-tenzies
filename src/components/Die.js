@@ -1,6 +1,8 @@
-function Die({value}) {
+function Die({value, isHeld}) {
   return (
-   <button className="die">{value}</button>
+   <button
+    className={`die${isHeld ? " die--held" : " die--not-held"}`}
+   >{value}</button>
   );
 }
 
