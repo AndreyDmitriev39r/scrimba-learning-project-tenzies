@@ -1,5 +1,33 @@
+/* general */
+
 *, ::before, ::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+:root {
+  --body-bg: pink;
+  --root-bg: #0B2434;
+  --main-bg: #F5F5F5;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--body-bg);
+}
+
+#root {
+  background-color: var(--root-bg);
+  margin-top: 1.5rem;
+  padding: 30px 20px;
+}
+
+main {
+  background-color: var(--main-bg);
+  height: 320px;
+  width: 320px;
+  border-radius: 10px;
 }
