@@ -16,6 +16,12 @@ function App() {
       .map(item => getRandomNumber(range));
   }
 
+  // event handlers
+
+  const handleRollClick = () => {
+    setDice(getDicevalues(10, 6));
+  }
+
   // state
 
   const [dice, setDice] = useState(() => getDicevalues(10, 6))
@@ -29,7 +35,11 @@ function App() {
     <div className="die-container">
       {diceElements}
     </div>
-    <button className="reroll">Roll</button>
+    <button
+      className="reroll"
+      onClick={handleRollClick}>
+        Roll
+    </button>
    </main>
   );
 }
