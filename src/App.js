@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Die from "./components/Die";
 
@@ -40,7 +40,19 @@ function App() {
 
   // state
 
-  const [dice, setDice] = useState(() => getDicevalues(10, 6))
+  const [dice, setDice] = useState(() => getDicevalues(10, 6));
+
+  const [tenzies, setTenzies] = useState(() => false);
+
+  // effect
+
+  useEffect(() => {    
+    if (dice.every(die => die.isHeld)) {
+      if (dice.reduce((acc, die) => acc + die.value, 0) === dice[0].value * dice.length) {
+        setTenzies(true);
+      };
+    }
+  }, [dice])
 
   // rendering
   
@@ -62,7 +74,7 @@ function App() {
     <button
       className="reroll"
       onClick={handleRollClick}>
-        Roll
+        {tenzies ? "Reset" : "Roll"}
     </button>
    </main>
   );
