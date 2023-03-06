@@ -1,3 +1,5 @@
+import { nanoid } from "nanoid";
+
 import { useState } from "react";
 
 import Die from "./components/Die";
@@ -17,9 +19,12 @@ function App() {
         return {
           value: getRandomNumber(range),
           isHeld: false,
+          id: nanoid(),
         };
       });
   }
+
+  const holdDice = (event, id) => console.log(id);
 
   // event handlers
 
@@ -33,11 +38,13 @@ function App() {
 
   // rendering
   
-  let diceElements = dice.map((dice, index) =>
+  let diceElements = dice.map((dice) =>
   <Die
     value={dice.value}
     isHeld={dice.isHeld}
-    key={index}
+    key={dice.id}
+    id={dice.id}
+    holdDice={holdDice}
   />
   );
   
