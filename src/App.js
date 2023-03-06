@@ -26,13 +26,15 @@ function App() {
 
   // event handlers
 
-  const handleRollClick = () => {
-    setDice(getDicevalues(10, 6));
+  const handleRollClick = () => {    
+    const nextDice = dice
+      .map(die => die.isHeld ? die : {...die, value: getRandomNumber(6)});
+    setDice(() => nextDice);    
   }
 
   const holdDice = (event, id) => {
     const nextDice = dice
-      .map(die => die.id === id ? {...die, isHeld: !die.isHeld} : die)   
+      .map(die => die.id === id ? {...die, isHeld: !die.isHeld} : die);
     setDice(() => nextDice);
   }
 
