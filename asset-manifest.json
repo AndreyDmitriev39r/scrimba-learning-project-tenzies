@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/scrimba-learning-project-tenzies/static/css/main.2ddb07b5.css",
+    "main.js": "/scrimba-learning-project-tenzies/static/js/main.aa53f6e4.js",
+    "index.html": "/scrimba-learning-project-tenzies/index.html",
+    "main.2ddb07b5.css.map": "/scrimba-learning-project-tenzies/static/css/main.2ddb07b5.css.map",
+    "main.aa53f6e4.js.map": "/scrimba-learning-project-tenzies/static/js/main.aa53f6e4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2ddb07b5.css",
+    "static/js/main.aa53f6e4.js"
+  ]
+}
