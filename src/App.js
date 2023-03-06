@@ -28,9 +28,14 @@ function App() {
   // event handlers
 
   const handleRollClick = () => {    
-    const nextDice = dice
+    if (!tenzies) {
+      const nextDice = dice
       .map(die => die.isHeld ? die : {...die, value: getRandomNumber(6)});
-    setDice(() => nextDice);    
+      setDice(() => nextDice);
+    } else {
+      setDice(getDicevalues(10, 6));
+      setTenzies(false);
+    }
   }
 
   const holdDice = (event, id) => {
