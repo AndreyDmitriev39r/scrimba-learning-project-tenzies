@@ -24,7 +24,11 @@ function App() {
       });
   }
 
-  const holdDice = (event, id) => console.log(id);
+  const holdDice = (event, id) => {
+    const nextDice = dice
+      .map(die => die.id === id ? {...die, isHeld: !die.isHeld} : die)   
+    setDice(() => nextDice);
+  }
 
   // event handlers
 
