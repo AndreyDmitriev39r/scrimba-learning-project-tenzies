@@ -1,4 +1,5 @@
 import { nanoid } from "nanoid";
+import Confetti from "react-confetti";
 
 import { useState, useEffect } from "react";
 
@@ -68,13 +69,14 @@ function App() {
   
   return (
    <main>
+    {tenzies && <Confetti />}
     <div className="die-container">
       {diceElements}
     </div>
     <button
       className="reroll"
       onClick={handleRollClick}>
-        {tenzies ? "Reset" : "Roll"}
+        {tenzies ? "New Game" : "Roll"}
     </button>
    </main>
   );
