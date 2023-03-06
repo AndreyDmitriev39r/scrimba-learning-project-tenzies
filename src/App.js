@@ -3,6 +3,7 @@ import Confetti from "react-confetti";
 
 import { useState, useEffect } from "react";
 
+import Header from "./components/Header";
 import Die from "./components/Die";
 
 function App() {
@@ -75,6 +76,7 @@ function App() {
   return (
    <main>
     {tenzies && <Confetti />}
+    <Header />
     <div className="die-container">
       {diceElements}
     </div>

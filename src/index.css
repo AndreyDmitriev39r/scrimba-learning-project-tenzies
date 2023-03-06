@@ -6,27 +6,29 @@
   padding: 0;
 }
 
-:root {
-  --body-bg: pink;
+:root {  
   --root-bg: #0B2434;
   --main-bg: #F5F5F5;
+  --rules-text: #4A4E74;
   --die-bg: #FFF;
   --die-shadow: rgba(0, 0, 0, 0.15);
   --die-text: #2B283A;
   --die-held: #59E391;
-  --reroll-bg: #5035FF;
+  --reroll-bg: #5035FF;  
 }
 
 body {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--body-bg);
+  background-color: var(--main-bg);
 }
 
 #root {
   background-color: var(--root-bg);
   height: 100vh;
+  max-height: 400px;
   padding: 30px 20px;
 }
 
@@ -39,7 +41,22 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 34px;
+  padding: 27px;
+}
+
+.main-heading {  
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--die-text);
+  margin-bottom: 5px;
+}
+
+.rules {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--rules-text);
+  padding: 0 10px;
+  margin-bottom: 23px;
 }
 
 .die-container {  
@@ -71,11 +88,27 @@ main {
   background-color: var(--die-held);
 }
 
+.die:hover {
+  color: var(--die-bg);
+  background-color: var(--die-text);
+}
+
 .reroll {
   margin-top: 25px;
   height: 36px;
   width: 92px;
   color: var(--die-bg);
   background-color: var(--reroll-bg);
-  font-size: 16.5px;  
+  font-size: 16.5px;
+  transition: .1s;
+}
+
+.reroll:hover {
+  color: var(--die-text);
+  border: 2px solid var(--die-text);
+  box-shadow: 3px 3px 5px var(--reroll-bg);
+}
+
+.reroll:active {
+  box-shadow: inset 2px 2px 3px var(--root-bg);
 }
