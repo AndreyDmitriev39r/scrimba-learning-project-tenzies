@@ -22,18 +22,18 @@ function App() {
           id: nanoid(),
         };
       });
+  }  
+
+  // event handlers
+
+  const handleRollClick = () => {
+    setDice(getDicevalues(10, 6));
   }
 
   const holdDice = (event, id) => {
     const nextDice = dice
       .map(die => die.id === id ? {...die, isHeld: !die.isHeld} : die)   
     setDice(() => nextDice);
-  }
-
-  // event handlers
-
-  const handleRollClick = () => {
-    setDice(getDicevalues(10, 6));
   }
 
   // state
